@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var serviceClient = ServiceClient()
+    var albums: [Album]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        serviceClient.fetchData { (albums) in
+            self.albums = albums
+        }
     }
 
 
