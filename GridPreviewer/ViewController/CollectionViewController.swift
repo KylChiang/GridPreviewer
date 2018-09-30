@@ -58,6 +58,7 @@ class CollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
 
         // Configure the cell
+        cell.imageView.image = nil
         cell.album = self.albums?[indexPath.row]
     
         return cell
