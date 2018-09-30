@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1FD20F5E33D672F1A9924F7F /* Pods_GridPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1706B3B6BF7A71038CC61647 /* Pods_GridPreviewer.framework */; };
+		258C6B4A216087D20037A742 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258C6B49216087D20037A742 /* CollectionViewController.swift */; };
+		258C6B4D2160896E0037A742 /* ServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258C6B4C2160896E0037A742 /* ServiceClient.swift */; };
+		258C6B4F21608AC40037A742 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258C6B4E21608AC40037A742 /* Album.swift */; };
 		25E7DCB821607EF8002641BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7DCB721607EF8002641BB /* AppDelegate.swift */; };
 		25E7DCBA21607EF8002641BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7DCB921607EF8002641BB /* ViewController.swift */; };
 		25E7DCBD21607EF8002641BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E7DCBB21607EF8002641BB /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 		13385D60FB6AF2520D59A780 /* Pods-GridPreviewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GridPreviewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GridPreviewer/Pods-GridPreviewer.debug.xcconfig"; sourceTree = "<group>"; };
 		1706B3B6BF7A71038CC61647 /* Pods_GridPreviewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GridPreviewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4A33DA1A88730F5D4C204C /* Pods_GridPreviewerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GridPreviewerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		258C6B49216087D20037A742 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		258C6B4C2160896E0037A742 /* ServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceClient.swift; sourceTree = "<group>"; };
+		258C6B4E21608AC40037A742 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		25E7DCB421607EF8002641BB /* GridPreviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridPreviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E7DCB721607EF8002641BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25E7DCB921607EF8002641BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +105,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		258C6B48216087B40037A742 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				25E7DCB921607EF8002641BB /* ViewController.swift */,
+				258C6B49216087D20037A742 /* CollectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		258C6B4B216089300037A742 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				258C6B4C2160896E0037A742 /* ServiceClient.swift */,
+				258C6B4E21608AC40037A742 /* Album.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		25E7DCAB21607EF8002641BB = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				25E7DCB721607EF8002641BB /* AppDelegate.swift */,
-				25E7DCB921607EF8002641BB /* ViewController.swift */,
+				258C6B48216087B40037A742 /* ViewController */,
+				258C6B4B216089300037A742 /* Model */,
 				25E7DCBB21607EF8002641BB /* Main.storyboard */,
 				25E7DCBE21607EFB002641BB /* Assets.xcassets */,
 				25E7DCC021607EFB002641BB /* LaunchScreen.storyboard */,
@@ -375,8 +400,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258C6B4A216087D20037A742 /* CollectionViewController.swift in Sources */,
 				25E7DCBA21607EF8002641BB /* ViewController.swift in Sources */,
+				258C6B4D2160896E0037A742 /* ServiceClient.swift in Sources */,
 				25E7DCB821607EF8002641BB /* AppDelegate.swift in Sources */,
+				258C6B4F21608AC40037A742 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +582,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GridPreviewer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KaiYunChiang.GridPreviewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -569,7 +600,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GridPreviewer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KaiYunChiang.GridPreviewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -585,7 +619,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GridPreviewerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KaiYunChiang.GridPreviewerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -602,7 +640,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GridPreviewerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KaiYunChiang.GridPreviewerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -618,7 +660,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GridPreviewerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KaiYunChiang.GridPreviewerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -634,7 +680,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GridPreviewerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KaiYunChiang.GridPreviewerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
