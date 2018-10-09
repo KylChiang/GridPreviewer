@@ -9,18 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    var serviceClient = ServiceClient()
-    var albums: [Album]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        serviceClient.fetchData { (albums) in
-            self.albums = albums
-        }
-    }
 
+    }
 
 }
 
