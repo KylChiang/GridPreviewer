@@ -6,7 +6,7 @@ target 'GridPreviewer' do
   use_frameworks!
 
   # Pods for GridPreviewer
-	pod 'Alamofire'
+	pod 'Alamofire', '5.1.0'
 
   target 'GridPreviewerTests' do
     inherit! :search_paths
