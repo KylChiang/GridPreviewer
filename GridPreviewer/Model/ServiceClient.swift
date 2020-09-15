@@ -11,7 +11,7 @@ import Alamofire
 
 // MARK: - Endpoint
 enum ServiceClientEndPoint {
-    case photo()
+    case photo
     
     var request: URLRequest {
         var components = URLComponents(string: baseURL)!
@@ -26,7 +26,7 @@ enum ServiceClientEndPoint {
     
     private var path:String {
         switch self {
-        case .photo(): return "/photos"
+        case .photo: return "/photos"
         }
     }
 }
@@ -35,11 +35,11 @@ enum ServiceClientEndPoint {
 struct ServiceClient {
     
     func fetchData(completion: @escaping ([Album]?) -> Void) {
-        let urlRequest = ServiceClientEndPoint.photo().request
+        let urlRequest = ServiceClientEndPoint.photo.request
         
-        Alamofire.request(urlRequest).responseJSON { (response) in
+        AF.request(urlRequest).responseJSON { (response) in
 
-            guard let resultDictionaries = response.result.value as? [[String:Any]] else {
+            guard let resultDictionaries = response.value as? [[String:Any]] else {
                 // Did not get JSON object
                 return
             }
